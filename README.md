@@ -1,7 +1,7 @@
 # Downscale Image Resolution API
 A REST API service that accepts an image and saves the image by converting it into multiple downscaled resolution format.
 
-# Languages
+# Implementation Details
 The conversion mechanism of the API is implemented using python Pillow (PIL) module.The Rest API is implemented using express and Node.js.
 
 # Routes
