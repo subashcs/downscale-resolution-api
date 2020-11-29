@@ -16,8 +16,10 @@ The API accepts an image of JPEG or PNG format.
   
   
 # API Output
-  
 
+ ## Success Response 
+ 1. 200 Ok
+  
 
 
 
