@@ -10,7 +10,7 @@ The conversion mechanism of the API is implemented using python Pillow (PIL) mod
   api/v1/convert | POST
 
 # API Input
-The API accepts an image of JPEG or PNG format.
+The API accepts an image file as input.
   ## Important API Headers
   Content-Type: multipart/form-data
   
