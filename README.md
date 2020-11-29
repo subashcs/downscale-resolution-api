@@ -19,7 +19,14 @@ The API accepts an image of JPEG or PNG format.
 
  ## Success Response 
  1. 200 Ok
-  
+
+# Installation Steps
+1.  Clone or Download the reposit
+2.  In the project root folder , Run *yarn * or *npm install* based on the package manager you choose
+3.  In order for the python script to work you need to have python installed with version >= 3.7
+4.  Install Pillow using pip by running *pip install Pillow* 
+5.  Run command *npm run start* or *yarn start* to start the project in development mode
+
 
 
 
