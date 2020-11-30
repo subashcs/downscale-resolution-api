@@ -68,13 +68,7 @@ app.post("/", (req, res) => {
   }
   var dataToSend;
   // spawn new child process to call the python script
-  const python = spawn("python", [
-    "pyscript.py",
-    "node.js",
-    "python",
-    imagename,
-    imagepath,
-  ]);
+  const python = spawn("python", ["pyscript.py", imagename, imagepath]);
   // collect data from script
   python.stdout.on("data", function (data) {
     console.log("Pipe data from python script ...");
