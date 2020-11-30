@@ -15,7 +15,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  console.log(req);
+  // console.log(req);
   var dataToSend;
   // spawn new child process to call the python script
   const python = spawn("python", ["checkscript.py", "node.js", "python"]);
@@ -24,6 +24,10 @@ app.get("/", (req, res) => {
     console.log("Pipe data from python script ...");
     dataToSend = data.toString();
   });
+  python.stderr.on("data", function (data) {
+    console.error(data.toString());
+  });
+
   // in close event we are sure that stream from child process is closed
   python.on("close", (code) => {
     console.log(`child process close all stdio with code ${code}`);
@@ -32,7 +36,7 @@ app.get("/", (req, res) => {
   });
 });
 app.post("/", (req, res) => {
-  console.log(req);
+  // console.log(req);
   console.log("files", req.files);
   let imagepath;
   let imagename;
@@ -73,6 +77,10 @@ app.post("/", (req, res) => {
   python.stdout.on("data", function (data) {
     console.log("Pipe data from python script ...");
     dataToSend = data.toString();
+  });
+
+  python.stderr.on("data", function (data) {
+    console.error(data.toString());
   });
   // in close event we are sure that stream from child process is closed
   python.on("close", (code) => {
